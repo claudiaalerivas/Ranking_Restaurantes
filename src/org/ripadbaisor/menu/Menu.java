@@ -1,5 +1,6 @@
 package org.ripadbaisor.menu;
 import javax.swing.*;
+import org.ripadbaisor.gestor.Gestor;
 
 public class Menu {
   public void mostrarMenu(){
@@ -15,7 +16,6 @@ public class Menu {
       """);
       if (opcionUsuario != null) {
         casoUsuario(opcionUsuario);
-        // opcionUsuario.toUpperCase();
       }
     } while (opcionUsuario != null && (!opcionUsuario.contains("Q")));
   }
@@ -24,16 +24,16 @@ public class Menu {
     
     switch (opcionUsuario) {
       case "1":
-        aniadirRestaurante();
+        Gestor.aniadirRestaurante();
         break;
       case "2":
-        editarRestaurante();
+        Gestor.editarRestaurante();
         break;
       case "3":
-        mostrarRestaurante();
+        Gestor.mostrarRestaurante();
         break;
       case "4":
-        eliminarRestaurante();
+        Gestor.eliminarRestaurante();
         break;
       case "Q":
         JOptionPane.showMessageDialog(null, "Hasta luego!");
